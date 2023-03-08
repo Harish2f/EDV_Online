@@ -1,0 +1,16 @@
+lint-job:
+  stage: lint
+  script:
+    - npm install -g eslint
+    - npm run lint:ci
+  only:
+    - develop
+    - main
+    - master
+    - merge_requests
+  except:
+    - tags
+  # artifacts:
+  #   paths:
+  #     - "**/bin"
+  #     - "**/obj"

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="31" failures="2" errors="0" time="23.763">
+  <testsuite name="appToast Component" errors="0" failures="0" skipped="0" timestamp="2023-02-03T13:57:47" time="4.636" tests="1">
+    <testcase classname="appToast Component should render error toast" name="appToast Component should render error toast" time="0.078">
+    </testcase>
+  </testsuite>
+  <testsuite name="modal Component" errors="0" failures="2" skipped="0" timestamp="2023-02-03T13:57:47" time="4.78" tests="2">
+    <testcase classname="modal Component renders without crashing" name="modal Component renders without crashing" time="0.143">
+      <failure>Error: expect(received).toBeInTheDocument()
+
+received value must be an HTMLElement or an SVGElement.
+Received has value: null
+    at __EXTERNAL_MATCHER_TRAP__ (C:\EDV V6\edv-online\node_modules\jest-circus\node_modules\expect\build\index.js:386:30)
+    at Object.toBeInTheDocument (C:\EDV V6\edv-online\node_modules\jest-circus\node_modules\expect\build\index.js:387:15)
+    at Object.&lt;anonymous&gt; (C:\EDV V6\edv-online\src\components\IndicatorConfiguration\IndicatorConfiguration.test.jsx:20:26)
+    at Promise.then.completed (C:\EDV V6\edv-online\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\EDV V6\edv-online\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\EDV V6\edv-online\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\EDV V6\edv-online\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\EDV V6\edv-online\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\EDV V6\edv-online\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\EDV V6\edv-online\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\EDV V6\edv-online\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\EDV V6\edv-online\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\EDV V6\edv-online\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\EDV V6\edv-online\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\EDV V6\edv-online\node_modules\jest-runner\build\testWorker.js:133:12)</failure>
+    </testcase>
+    <testcase classname="modal Component opens and closes the modal" name="modal Component opens and closes the modal" time="0.005">
+      <failure>Error: Unable to fire a &quot;click&quot; event - please provide a DOM element.
+    at createEvent (C:\EDV V6\edv-online\node_modules\@testing-library\dom\dist\events.js:27:11)
+    at Function.createEvent.&lt;computed&gt; [as click] (C:\EDV V6\edv-online\node_modules\@testing-library\dom\dist\events.js:106:38)
+    at Function.fireEvent.&lt;computed&gt; [as click] (C:\EDV V6\edv-online\node_modules\@testing-library\dom\dist\events.js:110:68)
+    at Function.click (C:\EDV V6\edv-online\node_modules\@testing-library\react\dist\fire-event.js:18:52)
+    at Object.&lt;anonymous&gt; (C:\EDV V6\edv-online\src\components\IndicatorConfiguration\IndicatorConfiguration.test.jsx:32:15)
+    at Promise.then.completed (C:\EDV V6\edv-online\node_modules\jest-circus\build\utils.js:391:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (C:\EDV V6\edv-online\node_modules\jest-circus\build\utils.js:316:10)
+    at _callCircusTest (C:\EDV V6\edv-online\node_modules\jest-circus\build\run.js:218:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (C:\EDV V6\edv-online\node_modules\jest-circus\build\run.js:155:3)
+    at _runTestsForDescribeBlock (C:\EDV V6\edv-online\node_modules\jest-circus\build\run.js:66:9)
+    at _runTestsForDescribeBlock (C:\EDV V6\edv-online\node_modules\jest-circus\build\run.js:60:9)
+    at run (C:\EDV V6\edv-online\node_modules\jest-circus\build\run.js:25:3)
+    at runAndTransformResultsToJestFormat (C:\EDV V6\edv-online\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
+    at jestAdapter (C:\EDV V6\edv-online\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
+    at runTestInternal (C:\EDV V6\edv-online\node_modules\jest-runner\build\runTest.js:389:16)
+    at runTest (C:\EDV V6\edv-online\node_modules\jest-runner\build\runTest.js:475:34)
+    at Object.worker (C:\EDV V6\edv-online\node_modules\jest-runner\build\testWorker.js:133:12)</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="filter Component" errors="0" failures="0" skipped="0" timestamp="2023-02-03T13:57:47" time="5.286" tests="5">
+    <testcase classname="filter Component should render initial time filter options" name="filter Component should render initial time filter options" time="0.073">
+    </testcase>
+    <testcase classname="filter Component should select one minute filter" name="filter Component should select one minute filter" time="0.191">
+    </testcase>
+    <testcase classname="filter Component should show dropdown time filter options" name="filter Component should show dropdown time filter options" time="0.133">
+    </testcase>
+    <testcase classname="filter Component should select one day time filter option" name="filter Component should select one day time filter option" time="0.071">
+    </testcase>
+    <testcase classname="filter Component should show select one year time filter option" name="filter Component should show select one year time filter option" time="0.193">
+    </testcase>
+  </testsuite>
+  <testsuite name="tradingview Component" errors="0" failures="0" skipped="0" timestamp="2023-02-03T13:57:47" time="5.387" tests="1">
+    <testcase classname="tradingview Component should render the whole app" name="tradingview Component should render the whole app" time="0.41">
+    </testcase>
+  </testsuite>
+  <testsuite name="app Component" errors="0" failures="0" skipped="0" timestamp="2023-02-03T13:57:47" time="5.44" tests="1">
+    <testcase classname="app Component should render the whole app" name="app Component should render the whole app" time="0.449">
+    </testcase>
+  </testsuite>
+  <testsuite name="navBar Component" errors="0" failures="0" skipped="0" timestamp="2023-02-03T13:57:47" time="6.333" tests="8">
+    <testcase classname="navBar Component should render nav bar" name="navBar Component should render nav bar" time="0.151">
+    </testcase>
+    <testcase classname="navBar Component should show search modal" name="navBar Component should show search modal" time="0.206">
+    </testcase>
+    <testcase classname="navBar Component should select all option from search modal" name="navBar Component should select all option from search modal" time="0.829">
+    </testcase>
+    <testcase classname="navBar Component should select ZCH1 option from search modal" name="navBar Component should select ZCH1 option from search modal" time="0.072">
+    </testcase>
+    <testcase classname="navBar Component should select C03_Calc_Notch with same axis" name="navBar Component should select C03_Calc_Notch with same axis" time="0.077">
+    </testcase>
+    <testcase classname="navBar Component should add dcb_heatsink_temperature with same axis" name="navBar Component should add dcb_heatsink_temperature with same axis" time="0.061">
+    </testcase>
+    <testcase classname="navBar Component should select C03_Calc_Notch with new pane" name="navBar Component should select C03_Calc_Notch with new pane" time="0.108">
+    </testcase>
+    <testcase classname="navBar Component should not select C03_Calc_Notch with new pane after reaching limit" name="navBar Component should not select C03_Calc_Notch with new pane after reaching limit" time="0.061">
+    </testcase>
+  </testsuite>
+  <testsuite name="lineChart Component" errors="0" failures="0" skipped="0" timestamp="2023-02-03T13:57:52" time="1.455" tests="1">
+    <testcase classname="lineChart Component should render chart" name="lineChart Component should render chart" time="0.136">
+    </testcase>
+  </testsuite>
+  <testsuite name="indicators Component" errors="0" failures="0" skipped="0" timestamp="2023-02-03T13:57:52" time="1.786" tests="1">
+    <testcase classname="indicators Component should add Moving Average indicator" name="indicators Component should add Moving Average indicator" time="0.206">
+    </testcase>
+  </testsuite>
+  <testsuite name="configuration Component" errors="0" failures="0" skipped="0" timestamp="2023-02-03T13:57:47" time="7.879" tests="11">
+    <testcase classname="configuration Component should render error toast" name="configuration Component should render error toast" time="0.289">
+    </testcase>
+    <testcase classname="configuration Component should select C03_Calc_Notch with same axis and show it&apos;s legend" name="configuration Component should select C03_Calc_Notch with same axis and show it&apos;s legend" time="0.419">
+    </testcase>
+    <testcase classname="configuration Component should select ZIT1_Max_Temperature, a symbol with out legend" name="configuration Component should select ZIT1_Max_Temperature, a symbol with out legend" time="0.258">
+    </testcase>
+    <testcase classname="configuration Component should display capacity limit reached toast" name="configuration Component should display capacity limit reached toast" time="0.579">
+    </testcase>
+    <testcase classname="configuration Component should select one minute time filter" name="configuration Component should select one minute time filter" time="0.436">
+    </testcase>
+    <testcase classname="configuration Component should remove C03_Calc_Notch with same axis and it&apos;s legend after adding it" name="configuration Component should remove C03_Calc_Notch with same axis and it&apos;s legend after adding it" time="0.126">
+    </testcase>
+    <testcase classname="configuration Component should add Moving Average indicator on C03_Calc_Notch" name="configuration Component should add Moving Average indicator on C03_Calc_Notch" time="0.176">
+    </testcase>
+    <testcase classname="configuration Component should change different len for Moving Average indicator on C03_Calc_Notch" name="configuration Component should change different len for Moving Average indicator on C03_Calc_Notch" time="0.218">
+    </testcase>
+    <testcase classname="configuration Component should cancel len modal for Moving Average indicator on C03_Calc_Notch" name="configuration Component should cancel len modal for Moving Average indicator on C03_Calc_Notch" time="0.213">
+    </testcase>
+    <testcase classname="configuration Component should change remove Moving Average indicator on C03_Calc_Notch" name="configuration Component should change remove Moving Average indicator on C03_Calc_Notch" time="0.18">
+    </testcase>
+    <testcase classname="configuration Component should search Moving Average indicator" name="configuration Component should search Moving Average indicator" time="0.075">
+    </testcase>
+  </testsuite>
+</testsuites>
