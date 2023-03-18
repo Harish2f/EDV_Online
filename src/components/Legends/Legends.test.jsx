@@ -1,6 +1,6 @@
 import { screen, render, fireEvent } from '@testing-library/react';
 
-import Configuration from './Legends';
+import Legends from './Legends';
 
 describe('<Configuration />', () => {
   it('renders correctly with legends', () => {
@@ -27,10 +27,11 @@ describe('<Configuration />', () => {
     };
 
     render(
-      <Configuration
+      <Legends
         legends={legends}
         legendIndicators={legendIndicators}
         onRemoveChart={jest.fn()}
+        showAddIndicatorForVariableModal={() => {}}
       />,
     );
 
@@ -57,10 +58,11 @@ describe('<Configuration />', () => {
     };
 
     render(
-      <Configuration
+      <Legends
         legends={legends}
         legendIndicators={legendIndicators}
         onRemoveChart={onRemoveChart}
+        showAddIndicatorForVariableModal={() => {}}
       />,
     );
 

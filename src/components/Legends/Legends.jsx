@@ -12,12 +12,13 @@ import data1 from '../../constants/data.json';
 import { getUnit, getLegend } from '../../helpers/index';
 import { Tag, TagDot } from './Legends.styles';
 
-function Configuration({
+function Legends({
   legends,
   onRemoveChart = () => {},
   legendIndicators,
   onRemoveIndicator = () => {},
   setshowIndicatorModal = () => {},
+  showAddIndicatorForVariableModal = () => {},
 }) {
   return (
     <>
@@ -59,9 +60,23 @@ function Configuration({
                     >
                       {getLegend(data1, name)}
                     </div>
+
                     <div className="text-warning ms-1">
                       ({getUnit(data1, name)})
                     </div>
+                    <Button
+                      title="add indicator for this variable"
+                      variant="dark"
+                      size="sm"
+                      data-testid={`addIndicatorFor${name}`}
+                      onClick={(evt) => {
+                        showAddIndicatorForVariableModal(legend);
+                        evt.stopPropagation();
+                      }}
+                      className="px-2 py-0 rounded-circle"
+                    >
+                      +
+                    </Button>
                     <Button
                       variant="dark"
                       size="sm"
@@ -154,7 +169,7 @@ function Configuration({
     </>
   );
 }
-Configuration.propTypes = {
+Legends.propTypes = {
   legends: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -175,5 +190,6 @@ Configuration.propTypes = {
   ).isRequired,
   onRemoveIndicator: PropTypes.func.isRequired,
   setshowIndicatorModal: PropTypes.func.isRequired,
+  showAddIndicatorForVariableModal: PropTypes.func.isRequired,
 };
-export default Configuration;
+export default Legends;
