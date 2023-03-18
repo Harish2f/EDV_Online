@@ -440,39 +440,38 @@ describe('configuration Component', () => {
     );
   });
 
-  it('shoud have all added indicators, when after added indicators, then add a variable', async () => {
+  it('should have all added indicators, when after added indicators, then add a variable', async () => {
     /**
      * Test to check newly added variables have all added indicators
      */
     expect.hasAssertions();
     render(<LegendsConfiguration />);
+    const searchBtn = screen.getByTestId('search-symbol');
+    fireEvent.click(searchBtn);
+
+    const searchModal = await screen.findByTestId('search-modal');
+    expect(searchModal).toBeInTheDocument();
+    const input = await screen.findByTestId('seacrh-input');
+    fireEvent.change(input, { target: { value: 'C03_Calc_Notch' } });
+    const c03CalcNotchBtn = await screen.findByTestId('same-axis-btn');
+    fireEvent.click(c03CalcNotchBtn);
+
+    const legend = await screen.findByTestId('C03_Calc_Notch');
+    expect(legend).toBeInTheDocument();
+    fireEvent.click(legend);
 
     let indicatorsBtn = await screen.findByText('Indicators');
     fireEvent.click(indicatorsBtn);
 
     const maBtn = await screen.findByText('Moving Average');
     fireEvent.click(maBtn);
+    expect(maBtn).toBeInTheDocument();
 
     indicatorsBtn = await screen.findByText('Indicators');
     fireEvent.click(indicatorsBtn);
 
     const emaBtn = await screen.findByText('Exponential Moving Average');
     fireEvent.click(emaBtn);
-
-    const searchBtn = screen.getByTestId('search-symbol');
-    fireEvent.click(searchBtn);
-
-    const searchModal = await screen.findByTestId('search-modal');
-    expect(searchModal).toBeInTheDocument();
-
-    const input = await screen.findByTestId('seacrh-input');
-    fireEvent.change(input, { target: { value: 'C03_Calc_Notch' } });
-
-    const c03CalcNotchBtn = await screen.findByTestId('same-axis-btn');
-    fireEvent.click(c03CalcNotchBtn);
-
-    const legend = await screen.findByTestId('C03_Calc_Notch');
-    expect(legend).toBeInTheDocument();
 
     const c03CalcNotchMA = await screen.findByTestId('C03_Calc_NotchMA');
     expect(c03CalcNotchMA).toBeInTheDocument();
@@ -481,7 +480,7 @@ describe('configuration Component', () => {
     expect(c03CalcNotchEMA).toBeInTheDocument();
   });
 
-  it('shoud share indicators, when variables added by new pane', async () => {
+  it('should share indicators, when variables added by new pane', async () => {
     /**
      * Test to check variables added by new pane, still share indicators
      */
@@ -502,13 +501,6 @@ describe('configuration Component', () => {
 
     const legend = await screen.findByTestId('C03_Calc_Notch');
     expect(legend).toBeInTheDocument();
-
-    const indicatorsBtn = await screen.findByText('Indicators');
-    fireEvent.click(indicatorsBtn);
-
-    const maBtn = await screen.findByText('Moving Average');
-    fireEvent.click(maBtn);
-
     searchBtn = screen.getByTestId('search-symbol');
     fireEvent.click(searchBtn);
 
@@ -525,13 +517,18 @@ describe('configuration Component', () => {
       .forEach((addedLegend) => {
         fireEvent.click(addedLegend);
       });
+    const indicatorsBtn = await screen.findByText('Indicators');
+    fireEvent.click(indicatorsBtn);
+
+    const maBtn = await screen.findByText('Moving Average');
+    fireEvent.click(maBtn);
 
     expect(
       screen.queryAllByRole('generic', { name: 'indicator' }),
     ).toHaveLength(2);
   });
 
-  it('shoud remove indicator together, when variables added by new pane', async () => {
+  it('should remove indicator together, when variables added by new pane', async () => {
     /**
      * Test to check variables added by new pane, still share indicators
      */
@@ -728,5 +725,63 @@ describe('configuration Component', () => {
 
     indicators = screen.queryAllByRole('generic', { name: 'indicator' });
     expect(indicators).toHaveLength(0);
+  });
+
+  it('should only add "Moving Average" to  "C03 CALC Notch", not to "DCB HeatSink Temperature"', async () => {
+    /**
+     * Test to check 'add indicator for variable' feature
+     */
+    expect.hasAssertions();
+    render(<LegendsConfiguration />);
+
+    let searchBtn = screen.getByTestId('search-symbol');
+    fireEvent.click(searchBtn);
+
+    const searchModal = await screen.findByTestId('search-modal');
+    expect(searchModal).toBeInTheDocument();
+
+    let input = await screen.findByTestId('seacrh-input');
+    fireEvent.change(input, { target: { value: 'C03_Calc_Notch' } });
+
+    const c03CalcNotchBtn = await screen.findByTestId('same-axis-btn');
+    fireEvent.click(c03CalcNotchBtn);
+
+    const legend = await screen.findByTestId('C03_Calc_Notch');
+    expect(legend).toBeInTheDocument();
+
+    searchBtn = screen.getByTestId('search-symbol');
+    fireEvent.click(searchBtn);
+
+    await screen.findByTestId('search-modal');
+
+    input = await screen.findByTestId('seacrh-input');
+    fireEvent.change(input, { target: { value: 'DCB_HeatSink_Temperature' } });
+
+    const dcbHeatSinkTemperatureBtn = await screen.findByTestId(
+      'same-axis-btn',
+    );
+    fireEvent.click(dcbHeatSinkTemperatureBtn);
+
+    screen
+      .queryAllByRole('generic', { name: 'legend' })
+      .forEach((addedLegend) => {
+        fireEvent.click(addedLegend);
+      });
+
+    const addIndicatorForBtn = await screen.findByTestId(
+      'addIndicatorForC03_Calc_Notch',
+    );
+    fireEvent.click(addIndicatorForBtn);
+
+    const maBtn = await screen.findByText('Moving Average');
+    fireEvent.click(maBtn);
+
+    const c03CalcNotchMA = await screen.findByTestId('C03_Calc_NotchMA');
+    expect(c03CalcNotchMA).toBeInTheDocument();
+
+    const dcbHeatSinkTemperatureMA = screen.queryByTestId(
+      'DCB_HeatSink_TemperatureMA',
+    );
+    expect(dcbHeatSinkTemperatureMA).not.toBeInTheDocument();
   });
 });

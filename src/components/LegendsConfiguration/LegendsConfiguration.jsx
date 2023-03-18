@@ -29,7 +29,8 @@ import {
  *  action: actions to modify legend indicators
  */
 const legendIndicatorReducer = (legendIndicators, action) => {
-  const { type, legends, indicator, removeLegend, indicators } = action;
+  const { type, legends, indicator, removeLegend, indicators, variable } =
+    action;
   let newLegendIndicators = {};
 
   switch (type) {
@@ -57,6 +58,14 @@ const legendIndicatorReducer = (legendIndicators, action) => {
           }
         }
       });
+      return newLegendIndicators;
+    case 'addIndicatorForVariable':
+      newLegendIndicators = { ...legendIndicators };
+      newLegendIndicators[variable.name] = [
+        ...newLegendIndicators[variable.name],
+        indicator,
+      ];
+
       return newLegendIndicators;
     case 'removeIndicator':
       newLegendIndicators = { ...legendIndicators };
@@ -111,6 +120,10 @@ function LegendsConfiguration() {
     legendIndicatorReducer,
     {},
   );
+  const [isAddingIndicatorForVariable, setIsAddingIndicatorForVariable] =
+    React.useState(false);
+  const [currentAddingIndicatorVariable, setCurrentAddingIndicatorVariable] =
+    React.useState(null);
 
   const handleMaLenCancel = () => {
     setValue(maLen);
@@ -186,6 +199,11 @@ function LegendsConfiguration() {
     setSelectedModal(filterChart(selectedItemModal, row, col));
   };
 
+  // const removeIndicator = (name) => {
+  //   console.log('removeIndicator side list wala', name);
+  //   setIndicators((ind) => ind.filter((i) => i.name !== name));
+  // };
+
   const removeIndicator = (removeLegend, indicator) => {
     legendIndicatorDispatcher({
       type: 'removeIndicator',
@@ -195,12 +213,27 @@ function LegendsConfiguration() {
   };
 
   const addIndicator = (indicator) => {
-    // console.log('addIndicator side list', indicator);
     legendIndicatorDispatcher({ type: 'addIndicator', legends, indicator });
 
     if (indicators.findIndex((ind) => ind.id === indicator.id) === -1) {
       setIndicators((inds) => [...inds, indicator]);
     }
+  };
+
+  const showAddIndicatorForVariableModal = (legend) => {
+    setCurrentAddingIndicatorVariable(legend);
+    setIsAddingIndicatorForVariable(true);
+  };
+
+  const addIndicatorForVariable = (indicator) => {
+    legendIndicatorDispatcher({
+      type: 'addIndicatorForVariable',
+      variable: currentAddingIndicatorVariable,
+      indicator,
+    });
+
+    setCurrentAddingIndicatorVariable(null);
+    setIsAddingIndicatorForVariable(false);
   };
 
   if (getLoader === 0) {
@@ -216,6 +249,8 @@ function LegendsConfiguration() {
         setTime={setTime}
         setShowToast={setShowToast}
         setSelectedIndicators={addIndicator}
+        isAddingIndicatorForVariable={isAddingIndicatorForVariable}
+        addIndicatorForVariable={addIndicatorForVariable}
       />
       <MainChartContainer>
         <LegendContainer data-testid="legend" className="rounded p-2 me-3">
@@ -225,7 +260,13 @@ function LegendsConfiguration() {
             legendIndicators={legendIndicators}
             onRemoveIndicator={removeIndicator}
             setshowIndicatorModal={setshowIndicatorModal}
+            showAddIndicatorForVariableModal={showAddIndicatorForVariableModal}
           />
+          {/* <Indicators
+            indicators={indicators}
+            onRemoveIndicator={removeIndicator}
+            setshowIndicatorModal={setshowIndicatorModal}
+          /> */}
           {legends && indicators.length > 0 && (
             <Button
               variant="danger"
@@ -242,6 +283,7 @@ function LegendsConfiguration() {
           <LineChart chartData={parsedData} />
         </ChartContainer>
       </MainChartContainer>
+      {/* TODO:// RE-USABLE COMPONENT FOR FUTURE USE */}
       <IndicatorConfiguration
         isShow={showIndicatorModal}
         onHide={() => setshowIndicatorModal(false)}
