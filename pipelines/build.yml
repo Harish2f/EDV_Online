@@ -1,0 +1,16 @@
+build-job:
+  stage: build
+  script:
+    - npm install
+    - npm run build:ci
+  only:
+    - develop
+    - main
+    - master
+    - merge_requests
+  except:
+    - tags
+    # artifacts:
+    # paths:
+    # - "**/bin"
+    # - "**/obj"ƒ

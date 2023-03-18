@@ -1,0 +1,4 @@
+[submodule "dependencies/codingstandard"]
+	path = devops/codingstandard
+	url = http://crslx34.progressrail.com/sw-team/coding-standards/reactjs-coding-standards.git
+	branch = develop

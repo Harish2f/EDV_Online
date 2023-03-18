@@ -1,0 +1,83 @@
+{
+  "root": true,
+  "settings": {},
+  "env": {
+    "browser": true,
+    "amd": true,
+    "es2021": true,
+    "jest": true
+  },
+
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "plugin:prettier/recommended",
+    "airbnb/hooks",
+    "plugin:testing-library/react",
+    "plugin:jest/all"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "jsx-a11y",
+    "prettier",
+    "testing-library",
+    "jest",
+    "eslint-plugin-import-helpers"
+  ],
+  "rules": {
+    "camelcase": "error",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".jsx"]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.spec.js"]
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error",
+    "import/no-unresolved": "error",
+    "no-undefined": "error",
+    "react/jsx-uses-vars": "error",
+    "jest/require-hook": [
+      "off",
+      {
+        "allowedFunctionCalls": ["enableAutoDestroy"]
+      }
+    ],
+    "jest/prefer-expect-assertions": [
+      "warn",
+      { "onlyFunctionsWithAsyncKeyword": true }
+    ]
+  }
+}

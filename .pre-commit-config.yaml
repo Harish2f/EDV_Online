@@ -1,0 +1,24 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.3.0
+    hooks:
+      - id: check-added-large-files
+        args: ['--maxkb=500']
+      - id: check-byte-order-marker
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: detect-private-key
+
+  - repo: local
+    hooks:
+      - id: prettier_fix
+        name: Prettier
+        entry: yarn format
+        files: \.[jt]sx?$
+        language: node
+      - id: lint_fix
+        name: ESLint
+        entry: yarn lint
+        files: \.[jt]sx?$
+        language: node

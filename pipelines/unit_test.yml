@@ -1,0 +1,19 @@
+unit-test-job: # This job runs in the test stage.
+  stage: test
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  script:
+    - npm ci
+    - npm run test:ci
+  only:
+    - develop
+    - main
+    - merge_requests
+  except:
+    - tags
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - junit.xml
+      cobertura: coverage/cobertura-coverage.xml
+

@@ -1,0 +1,92 @@
+[
+  {
+    "name": "1m",
+    "value": 60,
+    "label": "1 Minute"
+  },
+  {
+    "name": "3m",
+    "value": 180,
+    "label": "3 Minutes"
+  },
+  {
+    "name": "5m",
+    "value": 300,
+    "label": "5 Minutes"
+  },
+  {
+    "name": "15m",
+    "value": 900,
+    "label": "15 Minutes"
+  },
+  {
+    "name": "30m",
+    "value": 1800,
+    "label": "30 Minutes"
+  },
+  {
+    "name": "45m",
+    "value": 2700,
+    "label": "45 Minutes"
+  },
+  {
+    "name": "_0",
+    "value": 2700,
+    "label": "_"
+  },
+  {
+    "name": "1h",
+    "value": 3600,
+    "label": "1 Hour"
+  },
+  {
+    "name": "2h",
+    "value": 7200,
+    "label": "2 Hours"
+  },
+  {
+    "name": "3h",
+    "value": 10800,
+    "label": "3 Hours"
+  },
+  {
+    "name": "4h",
+    "value": 14400,
+    "label": "4 Hours"
+  },
+  {
+    "name": "_1",
+    "value": 2700,
+    "label": "_"
+  },
+  {
+    "name": "D",
+    "value": 86400,
+    "label": "1 Day"
+  },
+  {
+    "name": "W",
+    "value": 604800,
+    "label": "1 Week"
+  },
+  {
+    "name": "M",
+    "value": 2628000,
+    "label": "1 Month"
+  },
+  {
+    "name": "3M",
+    "value": 7884000,
+    "label": "3 Months"
+  },
+  {
+    "name": "6M",
+    "value": 15768000,
+    "label": "6 Months"
+  },
+  {
+    "name": "Y",
+    "value": 31536000,
+    "label": "1 Year"
+  }
+]

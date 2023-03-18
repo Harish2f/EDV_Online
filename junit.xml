@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="44" failures="2" errors="0" time="17.407">
+  <testsuite name="indicators component" errors="0" failures="0" skipped="0" timestamp="2023-03-15T06:59:55" time="3.825" tests="2">
+    <testcase classname="indicators component renders correctly with indicators" name="indicators component renders correctly with indicators" time="0.168">
+    </testcase>
+    <testcase classname="indicators component calls onRemoveIndicator and setshowIndicatorModal when buttons are clicked" name="indicators component calls onRemoveIndicator and setshowIndicatorModal when buttons are clicked" time="0.034">
+    </testcase>
+  </testsuite>
+  <testsuite name="indicatorConfiguration" errors="0" failures="0" skipped="0" timestamp="2023-03-15T06:59:55" time="4.053" tests="3">
+    <testcase classname="indicatorConfiguration should render the component" name="indicatorConfiguration should render the component" time="0.266">
+    </testcase>
+    <testcase classname="indicatorConfiguration should call handleClose when clicking on Cancel" name="indicatorConfiguration should call handleClose when clicking on Cancel" time="0.051">
+    </testcase>
+    <testcase classname="indicatorConfiguration should call handleOk when clicking on Ok" name="indicatorConfiguration should call handleOk when clicking on Ok" time="0.069">
+    </testcase>
+  </testsuite>
+  <testsuite name="&lt;Configuration /&gt;" errors="0" failures="0" skipped="0" timestamp="2023-03-15T06:59:55" time="4.141" tests="2">
+    <testcase classname="&lt;Configuration /&gt; renders correctly with legends" name="&lt;Configuration /&gt; renders correctly with legends" time="0.359">
+    </testcase>
+    <testcase classname="&lt;Configuration /&gt; calls onRemoveChart when remove button is clicked" name="&lt;Configuration /&gt; calls onRemoveChart when remove button is clicked" time="0.076">
+    </testcase>
+  </testsuite>
+  <testsuite name="indicators Component" errors="0" failures="0" skipped="0" timestamp="2023-03-15T06:59:55" time="4.344" tests="1">
+    <testcase classname="indicators Component should add Moving Average indicator" name="indicators Component should add Moving Average indicator" time="0.514">
+    </testcase>
+  </testsuite>
+  <testsuite name="filter Component" errors="0" failures="0" skipped="0" timestamp="2023-03-15T06:59:55" time="4.814" tests="5">
+    <testcase classname="filter Component should render initial time filter options" name="filter Component should render initial time filter options" time="0.159">
+    </testcase>
+    <testcase classname="filter Component should select one minute filter" name="filter Component should select one minute filter" time="0.281">
+    </testcase>
+    <testcase classname="filter Component should show dropdown time filter options" name="filter Component should show dropdown time filter options" time="0.29">
+    </testcase>
+    <testcase classname="filter Component should select one day time filter option" name="filter Component should select one day time filter option" time="0.125">
+    </testcase>
+    <testcase classname="filter Component should show select one year time filter option" name="filter Component should show select one year time filter option" time="0.403">
+    </testcase>
+  </testsuite>
+  <testsuite name="lineChart Component" errors="0" failures="0" skipped="0" timestamp="2023-03-15T06:59:59" time="2.05" tests="1">
+    <testcase classname="lineChart Component should render chart" name="lineChart Component should render chart" time="0.282">
+    </testcase>
+  </testsuite>
+  <testsuite name="appToast Component" errors="0" failures="0" skipped="0" timestamp="2023-03-15T06:59:59" time="1.936" tests="1">
+    <testcase classname="appToast Component should render error toast" name="appToast Component should render error toast" time="0.108">
+    </testcase>
+  </testsuite>
+  <testsuite name="navBar Component" errors="0" failures="0" skipped="0" timestamp="2023-03-15T06:59:55" time="6.55" tests="8">
+    <testcase classname="navBar Component should render nav bar" name="navBar Component should render nav bar" time="0.24">
+    </testcase>
+    <testcase classname="navBar Component should show search modal" name="navBar Component should show search modal" time="0.449">
+    </testcase>
+    <testcase classname="navBar Component should select all option from search modal" name="navBar Component should select all option from search modal" time="1.204">
+    </testcase>
+    <testcase classname="navBar Component should select ZCH1 option from search modal" name="navBar Component should select ZCH1 option from search modal" time="0.246">
+    </testcase>
+    <testcase classname="navBar Component should select C03_Calc_Notch with same axis" name="navBar Component should select C03_Calc_Notch with same axis" time="0.205">
+    </testcase>
+    <testcase classname="navBar Component should add dcb_heatsink_temperature with same axis" name="navBar Component should add dcb_heatsink_temperature with same axis" time="0.158">
+    </testcase>
+    <testcase classname="navBar Component should select C03_Calc_Notch with new pane" name="navBar Component should select C03_Calc_Notch with new pane" time="0.179">
+    </testcase>
+    <testcase classname="navBar Component should not select C03_Calc_Notch with new pane after reaching limit" name="navBar Component should not select C03_Calc_Notch with new pane after reaching limit" time="0.096">
+    </testcase>
+  </testsuite>
+  <testsuite name="tradingview Component" errors="0" failures="0" skipped="0" timestamp="2023-03-15T07:00:00" time="2.396" tests="1">
+    <testcase classname="tradingview Component should render the whole app" name="tradingview Component should render the whole app" time="0.314">
+    </testcase>
+  </testsuite>
+  <testsuite name="app Component" errors="0" failures="0" skipped="0" timestamp="2023-03-15T07:00:00" time="2.264" tests="1">
+    <testcase classname="app Component should render the whole app" name="app Component should render the whole app" time="0.299">
+    </testcase>
+  </testsuite>
+  <testsuite name="configuration Component" errors="0" failures="2" skipped="0" timestamp="2023-03-15T06:59:55" time="14.077" tests="19">
+    <testcase classname="configuration Component should render error toast" name="configuration Component should render error toast" time="0.521">
+    </testcase>
+    <testcase classname="configuration Component should select C03_Calc_Notch with same axis and show it&apos;s legend" name="configuration Component should select C03_Calc_Notch with same axis and show it&apos;s legend" time="0.968">
+    </testcase>
+    <testcase classname="configuration Component should select ZIT1_Max_Temperature, a symbol with out legend" name="configuration Component should select ZIT1_Max_Temperature, a symbol with out legend" time="0.423">
+    </testcase>
+    <testcase classname="configuration Component should display capacity limit reached toast" name="configuration Component should display capacity limit reached toast" time="0.681">
+    </testcase>
+    <testcase classname="configuration Component should select one minute time filter" name="configuration Component should select one minute time filter" time="0.342">
+    </testcase>
+    <testcase classname="configuration Component should remove C03_Calc_Notch with same axis and it&apos;s legend after adding it" name="configuration Component should remove C03_Calc_Notch with same axis and it&apos;s legend after adding it" time="0.184">
+    </testcase>
+    <testcase classname="configuration Component should add Moving Average indicator on C03_Calc_Notch" name="configuration Component should add Moving Average indicator on C03_Calc_Notch" time="0.215">
+    </testcase>
+    <testcase classname="configuration Component should change different len for Moving Average indicator on C03_Calc_Notch" name="configuration Component should change different len for Moving Average indicator on C03_Calc_Notch" time="0.311">
+    </testcase>
+    <testcase classname="configuration Component should cancel len modal for Moving Average indicator on C03_Calc_Notch" name="configuration Component should cancel len modal for Moving Average indicator on C03_Calc_Notch" time="0.269">
+    </testcase>
+    <testcase classname="configuration Component should change remove Moving Average indicator on C03_Calc_Notch" name="configuration Component should change remove Moving Average indicator on C03_Calc_Notch" time="0.221">
+    </testcase>
+    <testcase classname="configuration Component should search Moving Average indicator" name="configuration Component should search Moving Average indicator" time="0.2">
+    </testcase>
+    <testcase classname="configuration Component should remove &quot;Moving Average&quot; separately on C03_Calc_Notch and  DCB_HeatSink_Temperature" name="configuration Component should remove &quot;Moving Average&quot; separately on C03_Calc_Notch and  DCB_HeatSink_Temperature" time="0.299">
+    </testcase>
+    <testcase classname="configuration Component add variables by &quot;Same Axis&quot;,only if there was not one before" name="configuration Component add variables by &quot;Same Axis&quot;,only if there was not one before" time="0.238">
+    </testcase>
+    <testcase classname="configuration Component shoud have all added indicators, when after added indicators, then add a variable" name="configuration Component shoud have all added indicators, when after added indicators, then add a variable" time="0.512">
+      <failure>Error: Value is null
+    at ensureNotNull (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:106:15)
+    at getContext2D (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:7673:17)
+    at PriceAxisWidget._internal_paint (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:8826:25)
+    at PaneWidget._internal_paint (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:9467:49)
+    at ChartWidget._internal_paint (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:10366:43)
+    at ChartWidget._private__drawImpl (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:10615:14)
+    at /Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:10666:26
+    at runAnimationFrameCallbacks (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/jsdom/lib/jsdom/browser/Window.js:599:13)
+    at Timeout.&lt;anonymous&gt; (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/jsdom/lib/jsdom/browser/Window.js:577:11)
+    at listOnTimeout (node:internal/timers:564:17)
+    at processTimers (node:internal/timers:507:7)</failure>
+    </testcase>
+    <testcase classname="configuration Component shoud share indicators, when variables added by new pane" name="configuration Component shoud share indicators, when variables added by new pane" time="0.487">
+      <failure>Error: Value is null
+    at ensureNotNull (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:106:15)
+    at getContext2D (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:7673:17)
+    at PriceAxisWidget._internal_optimalWidth (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:8755:21)
+    at ChartWidget._private__adjustSizeImpl (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:10500:128)
+    at ChartWidget._private__syncGuiWithModel (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:10718:14)
+    at ChartWidget._private__updateGui (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:10672:14)
+    at ChartWidget._private__drawImpl (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:10591:18)
+    at /Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/custom-pane-charts/dist/lightweight-charts.esm.development.js:10666:26
+    at runAnimationFrameCallbacks (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/jsdom/lib/jsdom/browser/Window.js:599:13)
+    at Timeout.&lt;anonymous&gt; (/Volumes/LocalDrive/Music/EVD-ONLINE-done 3/node_modules/jsdom/lib/jsdom/browser/Window.js:577:11)
+    at listOnTimeout (node:internal/timers:564:17)
+    at processTimers (node:internal/timers:507:7)</failure>
+    </testcase>
+    <testcase classname="configuration Component shoud remove indicator together, when variables added by new pane" name="configuration Component shoud remove indicator together, when variables added by new pane" time="1.007">
+    </testcase>
+    <testcase classname="configuration Component can remove indicator from newly added variable by new pane" name="configuration Component can remove indicator from newly added variable by new pane" time="1.216">
+    </testcase>
+    <testcase classname="configuration Component should clear all indicators" name="configuration Component should clear all indicators" time="0.897">
+    </testcase>
+    <testcase classname="configuration Component should only add &quot;Moving Average&quot; to  &quot;C03 CALC Notch&quot;, not to &quot;DCB HeatSink Temperature&quot;" name="configuration Component should only add &quot;Moving Average&quot; to  &quot;C03 CALC Notch&quot;, not to &quot;DCB HeatSink Temperature&quot;" time="0.351">
+    </testcase>
+  </testsuite>
+</testsuites>
