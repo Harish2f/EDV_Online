@@ -18,7 +18,13 @@ describe('indicators Component', () => {
    */
   it('should add Moving Average indicator', async () => {
     expect.hasAssertions();
-    render(<ModalIndicators setSelectedIndicators={() => {}} />);
+    render(
+      <ModalIndicators
+        setSelectedIndicators={() => {}}
+        isAddingIndicatorForVariable={false}
+        addIndicatorForVariable={() => {}}
+      />,
+    );
 
     const indicatorsBtn = await screen.findByText('Indicators');
     fireEvent.click(indicatorsBtn);

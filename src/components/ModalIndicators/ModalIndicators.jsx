@@ -1,6 +1,6 @@
 import { ma, dma, ema, sma, wma } from 'moving-averages-js';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ModalHeader, Modal, Button, ListGroup } from 'react-bootstrap';
 
 import { SearchBar, I, Input } from './ModalIndicators.styles';
@@ -22,7 +22,11 @@ const indicatorsOptions = [
   { id: 5, name: 'Weighted Moving Average', func: wma, sym: 'WMA' },
 ];
 
-function ModalIndicators({ setSelectedIndicators }) {
+function ModalIndicators({
+  setSelectedIndicators,
+  isAddingIndicatorForVariable,
+  addIndicatorForVariable,
+}) {
   /**
    * indicators : list of indicators available for the user to select and
    * plot for the variable of their choice
@@ -36,6 +40,11 @@ function ModalIndicators({ setSelectedIndicators }) {
    */
   const [indicators, setIndicators] = useState(indicatorsOptions);
   const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setShow(isAddingIndicatorForVariable);
+  }, [isAddingIndicatorForVariable]);
+
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   const handleChange = ({ target: { value } }) => {
@@ -48,7 +57,13 @@ function ModalIndicators({ setSelectedIndicators }) {
 
   const handleSelectIndicator = (indicator) => {
     // console.log('indicator', indicator);
-    setSelectedIndicators(indicator);
+
+    if (isAddingIndicatorForVariable) {
+      addIndicatorForVariable(indicator);
+    } else {
+      setSelectedIndicators(indicator);
+    }
+
     handleClose();
   };
 
@@ -102,4 +117,6 @@ export default ModalIndicators;
 
 ModalIndicators.propTypes = {
   setSelectedIndicators: PropTypes.func.isRequired,
+  isAddingIndicatorForVariable: PropTypes.bool.isRequired,
+  addIndicatorForVariable: PropTypes.func.isRequired,
 };
