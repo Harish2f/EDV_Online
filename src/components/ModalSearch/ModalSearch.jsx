@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 
 import data from '../../constants/data.json';
 import { getGroupName } from '../../helpers';
+import trimText from '../../utils/trimText';
 import ModalIndicators from '../ModalIndicators/ModalIndicators';
 import TimeFilter from '../TimeFilter/TimeFilter';
 import {
@@ -16,8 +17,8 @@ import {
   NavBarButton,
   Img,
   Symbol,
-  UL,
   AppNavBar,
+  SuggestionsGrid,
 } from './ModalSearch.styles';
 
 /**
@@ -47,6 +48,8 @@ function ModalSearch({
   setSelectedModal,
   setShowToast,
   setSelectedIndicators,
+  isAddingIndicatorForVariable,
+  addIndicatorForVariable,
 }) {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
@@ -56,6 +59,8 @@ function ModalSearch({
   dataObjs = dataObjs.map((item) => item.toLowerCase());
   const [suggestions, setSuggestions] = useState([]);
   const [groups, setGroups] = useState({});
+  const alphabeticalGroupKeys = Object.keys(groups).sort();
+  const alphabeticalSuggestions = suggestions.sort();
 
   const handleChange = ({ target: { value } }) => {
     const tempArr = dataObjs.filter(
@@ -130,7 +135,11 @@ function ModalSearch({
             Search
           </NavBarButton>
           <TimeFilter setTime={setTime} />
-          <ModalIndicators setSelectedIndicators={setSelectedIndicators} />
+          <ModalIndicators
+            setSelectedIndicators={setSelectedIndicators}
+            isAddingIndicatorForVariable={isAddingIndicatorForVariable}
+            addIndicatorForVariable={addIndicatorForVariable}
+          />
         </Container>
       </AppNavBar>
 
@@ -156,22 +165,27 @@ function ModalSearch({
             >
               All
             </OptionButton>
-            {Object.keys(groups).map((item) => (
+            {alphabeticalGroupKeys.map((item) => (
               <OptionButton
                 type="button"
                 data-testid={item}
-                key={item}
+                key={`key+${item}`}
                 onClick={() => handleButtonValue(item)}
               >
                 {item}
               </OptionButton>
             ))}
-            <UL data-testid="list">
-              {suggestions.map((item) => (
-                <li key={item} className="list-unstyled">
-                  {item !== 'edv' && (
-                    <>
-                      <Symbol>{item}</Symbol>
+            <SuggestionsGrid data-testid="list">
+              {alphabeticalSuggestions.map(
+                (item) =>
+                  item !== 'edv' && (
+                    <React.Fragment key={`1-${item}`}>
+                      <Symbol
+                        style={{ backgroundColor: 'initial' }}
+                        title={item}
+                      >
+                        {trimText(item, 24)}
+                      </Symbol>
                       <OptionButton
                         type="button"
                         data-testid="same-axis-btn"
@@ -186,11 +200,10 @@ function ModalSearch({
                       >
                         New pane
                       </OptionButton>
-                    </>
-                  )}
-                </li>
-              ))}
-            </UL>
+                    </React.Fragment>
+                  ),
+              )}
+            </SuggestionsGrid>
           </Modal.Body>
         </div>
       </Modal>
@@ -220,4 +233,6 @@ ModalSearch.propTypes = {
    */
   setShowToast: PropTypes.func.isRequired,
   setSelectedIndicators: PropTypes.func.isRequired,
+  isAddingIndicatorForVariable: PropTypes.bool.isRequired,
+  addIndicatorForVariable: PropTypes.func.isRequired,
 };

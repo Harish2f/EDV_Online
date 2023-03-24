@@ -86,3 +86,18 @@ export const UL = styled.ul`
   border-top: 1px solid #474a53;
   padding: 10px 0 0;
 `;
+
+export const SuggestionsGrid = styled.div`
+  display: grid;
+  align-content: baseline;
+  grid-template-columns: repeat(3, 1fr);
+  height: 300px;
+  overflow-y: scroll;
+  margin-top: 22px;
+  border-top: 1px solid #474a53;
+  padding: 10px 0 0;
+
+  & > * {
+    max-height: 31px;
+  }
+`;

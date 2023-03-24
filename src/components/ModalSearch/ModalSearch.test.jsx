@@ -27,6 +27,8 @@ describe('navBar Component', () => {
         setSelectedModal={setSelectedModal}
         setShowToast={setShowToast}
         setSelectedIndicators={() => {}}
+        isAddingIndicatorForVariable={false}
+        addIndicatorForVariable={() => {}}
       />,
     );
 
@@ -51,6 +53,8 @@ describe('navBar Component', () => {
         setSelectedModal={setSelectedModal}
         setShowToast={setShowToast}
         setSelectedIndicators={() => {}}
+        isAddingIndicatorForVariable={false}
+        addIndicatorForVariable={() => {}}
       />,
     );
 
@@ -78,6 +82,8 @@ describe('navBar Component', () => {
         setSelectedModal={setSelectedModal}
         setShowToast={setShowToast}
         setSelectedIndicators={() => {}}
+        isAddingIndicatorForVariable={false}
+        addIndicatorForVariable={() => {}}
       />,
     );
 
@@ -111,6 +117,8 @@ describe('navBar Component', () => {
         setSelectedModal={setSelectedModal}
         setShowToast={setShowToast}
         setSelectedIndicators={() => {}}
+        isAddingIndicatorForVariable={false}
+        addIndicatorForVariable={() => {}}
       />,
     );
 
@@ -148,6 +156,8 @@ describe('navBar Component', () => {
         setSelectedModal={setSelectedModal}
         setShowToast={setShowToast}
         setSelectedIndicators={() => {}}
+        isAddingIndicatorForVariable={false}
+        addIndicatorForVariable={() => {}}
       />,
     );
 
@@ -186,6 +196,8 @@ describe('navBar Component', () => {
         setSelectedModal={setSelectedModal}
         setShowToast={setShowToast}
         setSelectedIndicators={() => {}}
+        isAddingIndicatorForVariable={false}
+        addIndicatorForVariable={() => {}}
       />,
     );
 
@@ -228,6 +240,8 @@ describe('navBar Component', () => {
         setSelectedModal={setSelectedModal}
         setShowToast={setShowToast}
         setSelectedIndicators={() => {}}
+        isAddingIndicatorForVariable={false}
+        addIndicatorForVariable={() => {}}
       />,
     );
 
@@ -277,6 +291,8 @@ describe('navBar Component', () => {
         setSelectedModal={setSelectedModal}
         setShowToast={setShowToast}
         setSelectedIndicators={() => {}}
+        isAddingIndicatorForVariable={false}
+        addIndicatorForVariable={() => {}}
       />,
     );
 
