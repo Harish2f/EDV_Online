@@ -12,7 +12,7 @@ import {
 } from '../../helpers';
 import AppToast from '../AppToast/AppToast';
 import IndicatorConfiguration from '../IndicatorConfiguration/IndicatorConfiguration';
-import Configuration from '../Legends/Legends';
+import Legends from '../Legends/Legends';
 // import Indicators from '../Indicators/Indicators';
 import LineChart from '../LineChart/LineChart';
 import NavBar from '../ModalSearch/ModalSearch';
@@ -254,7 +254,7 @@ function LegendsConfiguration() {
       />
       <MainChartContainer>
         <LegendContainer data-testid="legend" className="rounded p-2 me-3">
-          <Configuration
+          <Legends
             legends={legends}
             onRemoveChart={removeChart}
             legendIndicators={legendIndicators}
@@ -280,7 +280,7 @@ function LegendsConfiguration() {
           )}
         </LegendContainer>
         <ChartContainer className="mb-2">
-          <LineChart chartData={parsedData} />
+          <LineChart key={JSON.stringify(parsedData)} chartData={parsedData} />
         </ChartContainer>
       </MainChartContainer>
       {/* TODO:// RE-USABLE COMPONENT FOR FUTURE USE */}
