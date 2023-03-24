@@ -29,7 +29,7 @@ function Indicators({
                   <TagDot
                     className="me-2"
                     {...{
-                      bg: randomColor,
+                      bg: randomColor(Math.random()),
                     }}
                   />
                   <div className="text-black">{name}</div>
@@ -45,7 +45,7 @@ function Indicators({
                     <TagDot
                       className="p-1"
                       {...{
-                        bg: randomColor,
+                        bg: randomColor(Math.random()),
                       }}
                     />
                     <div
