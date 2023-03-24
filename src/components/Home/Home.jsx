@@ -10,11 +10,11 @@ import LegendsConfiguration from '../LegendsConfiguration/LegendsConfiguration';
  *
  */
 
-function TradingView() {
+function Home() {
   /**
    * This component renders the landing page along with rendering Navbar, Line chart,TimeFilter, Indicators and legends
    */
   return <LegendsConfiguration />;
 }
 
-export default TradingView;
+export default Home;
