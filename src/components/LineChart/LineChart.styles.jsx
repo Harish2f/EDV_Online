@@ -9,6 +9,10 @@ import styled from 'styled-components';
  */
 
 const Chart = styled.div`
+  width: 100%;
+  height: 85vh;
+  position: relative;
+  overflow: hidden; // Add this line to hide any overflowing content
   height: ${(props) => {
     return props.height;
   }};
