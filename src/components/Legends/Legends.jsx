@@ -29,7 +29,7 @@ function Legends({
         const { id, name, row, col, color } = legend;
 
         return (
-          <Accordion allowZeroExpanded>
+          <Accordion key={id} allowZeroExpanded>
             <AccordionItem>
               <AccordionItemButton>
                 <div className="d-flex align-items-center w-100 my-2 user-select-none">
